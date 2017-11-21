@@ -1,0 +1,27 @@
+{
+  "name": "serveur",
+  "version": "0.0.1",
+  "description": "premiere cours javascript",
+  "scripts": {
+    "prebuild": "npm run lint",
+    "build": "npm run build:js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "start:watch": "nodemon",
+    "build:js": "browserify www/js/main.js | uglifyjs --compress - > www/js/bundle.min.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "author": "elomariAchraf",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.15.5",
+    "morgan": "1.9.0",
+    "nunjucks": "3.0.1"
+  },
+  "devDependencies": {
+    "browserify": "14.4.0",
+    "nodemon": "1.12.1",
+    "uglify-js": "3.1.3"
+  }
+}
